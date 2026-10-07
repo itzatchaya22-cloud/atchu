@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DrugWatch AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <div id="loginPage" class="login-page">
+
+        <div class="login-box">
+
+            <div class="logo">
+                🛡️
+            </div>
+
+            <h1>DrugWatch <span>AI</span></h1>
+
+            <p>
+                Drug Trafficking Detection &
+                Evidence Management System
+            </p>
+
+            <form id="loginForm">
+
+                <label>Investigator ID</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter Investigator ID"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter Password"
+                    required
+                >
+
+                <button type="submit">
+                    Secure Login →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN WEBSITE ================= -->
+
+    <div id="mainApp" class="hidden">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <h2>🛡️ DrugWatch</h2>
+
+            <p class="subtitle">
+                AI Investigation
+            </p>
+
+            <nav>
+
+                <button onclick="showPage('dashboard')">
+                    📊 Dashboard
+                </button>
+
+                <button onclick="showPage('analysis')">
+                    🔎 Social Media Analysis
+                </button>
+
+                <button onclick="showPage('detection')">
+                    ⚠️ AI Detection Result
+                </button>
+
+                <button onclick="showPage('evidence')">
+                    📁 Evidence Management
+                </button>
+
+                <button onclick="showPage('cases')">
+                    🚨 Case Management
+                </button>
+
+                <button onclick="showPage('reports')">
+                    📄 Report Generation
+                </button>
+
+                <button onclick="showPage('assistant')">
+                    🤖 AI Assistant
+                </button>
+
+            </nav>
+
+            <button class="logout" onclick="logout()">
+                ↪ Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="content">
+
+            <!-- TOP BAR -->
+
+            <header>
+
+                <div>
+
+                    <small>
+                        AUTHORIZED INVESTIGATION PORTAL
+                    </small>
+
+                    <h1 id="pageTitle">
+                        Main Dashboard
+                    </h1>
+
+                </div>
+
+                <div class="profile">
+
+                    👤
+
+                    <span id="investigatorName">
+                        Investigator
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section id="dashboard" class="page">
+
+                <div class="welcome">
+
+                    <span>AI-ASSISTED INVESTIGATION</span>
+
+                    <h2>
+                        Monitor. Analyze. Organize.
+                    </h2>
+
+                    <p>
+                        AI-assisted analysis of publicly
+                        available information for authorized
+                        investigations.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h3>Accounts Analyzed</h3>
+                        <h2>1,250</h2>
+                        <p>↑ 12% this month</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Suspicious Accounts</h3>
+                        <h2>86</h2>
+                        <p>Requires review</p>
+                    </div>
+
+                    <div class="card danger">
+                        <h3>High Risk Cases</h3>
+                        <h2>18</h2>
+                        <p>Priority investigation</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Evidence Items</h3>
+                        <h2>324</h2>
+                        <p>Securely organized</p>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="panel">
+
+                        <h3>Risk Overview</h3>
+
+                        <div class="risk">
+                            <span>🔴 High Risk</span>
+                            <b>18</b>
+                        </div>
+
+                        <div class="risk">
+                            <span>🟡 Medium Risk</span>
+                            <b>31</b>
+                        </div>
+
+                        <div class="risk">
+                            <span>🟢 Low Risk</span>
+                            <b>37</b>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <h3>Recent Cases</h3>
+
+                        <p>
+                            🔴 DW-2026-018 — High Risk
+                        </p>
+
+                        <p>
+                            🟡 DW-2026-017 — Medium Risk
+                        </p>
+
+                        <p>
+                            🟢 DW-2026-016 — Low Risk
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SOCIAL MEDIA ANALYSIS ================= -->
+
+            <section id="analysis" class="page hidden">
+
+                <h2>🔎 Social Media Analysis</h2>
+
+                <p>
+                    Analyze publicly available or lawfully
+                    obtained information.
+                </p>
+
+                <div class="panel">
+
+                    <label>Platform</label>
+
+                    <select id="platform">
+
+                        <option>
+                            Telegram - Public Channel
+                        </option>
+
+                        <option>
+                            Instagram - Public Profile
+                        </option>
+
+                        <option>
+                            Other Public Source
+                        </option>
+
+                    </select>
+
+
+                    <label>Public Account / Channel</label>
+
+                    <input
+                        type="text"
+                        id="account"
+                        placeholder="@example_channel"
+                    >
+
+
+                    <label>Content / Public Information</label>
+
+                    <textarea
+                        id="content"
+                        rows="7"
+                        placeholder="Enter publicly available information..."
+                    ></textarea>
+
+
+                    <button onclick="analyzeData()">
+                        🤖 Analyze with AI
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= AI DETECTION ================= -->
+
+            <section id="detection" class="page hidden">
+
+                <h2>⚠️ AI Detection Result</h2>
+
+                <div id="resultBox" class="panel">
+
+                    <h3>Analysis Result</h3>
+
+                    <p>
+                        No analysis performed yet.
+                    </p>
+
+                    <p>
+                        Go to Social Media Analysis and
+                        run an analysis.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= EVIDENCE ================= -->
+
+            <section id="evidence" class="page hidden">
+
+                <h2>📁 Evidence Management</h2>
+
+                <div class="panel">
+
+                    <button onclick="addEvidence()">
+                        ＋ Add Evidence
+                    </button>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Evidence ID</th>
+                                <th>Platform</th>
+                                <th>Type</th>
+                                <th>Risk</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="evidenceTable">
+
+                            <tr>
+                                <td>EV-0324</td>
+                                <td>Telegram</td>
+                                <td>Screenshot</td>
+                                <td>🔴 High</td>
+                                <td>Under Review</td>
+                            </tr>
+
+                            <tr>
+                                <td>EV-0323</td>
+                                <td>Instagram</td>
+                                <td>Public Post</td>
+                                <td>🟡 Medium</td>
+                                <td>Verified</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= CASE MANAGEMENT ================= -->
+
+            <section id="cases" class="page hidden">
+
+                <h2>🚨 Case Management</h2>
+
+                <div class="case-grid">
+
+                    <div class="case">
+                        <span>🔴 HIGH</span>
+
+                        <h3>
+                            DW-2026-018
+                        </h3>
+
+                        <p>
+                            Public channel analysis
+                        </p>
+
+                        <small>
+                            18 Evidence | In Review
+                        </small>
+                    </div>
+
+
+                    <div class="case">
+                        <span>🟡 MEDIUM</span>
+
+                        <h3>
+                            DW-2026-017
+                        </h3>
+
+                        <p>
+                            Repeated suspicious posts
+                        </p>
+
+                        <small>
+                            9 Evidence | Pending
+                        </small>
+                    </div>
+
+
+                    <div class="case">
+                        <span>🟢 LOW</span>
+
+                        <h3>
+                            DW-2026-016
+                        </h3>
+
+                        <p>
+                            Evidence review completed
+                        </p>
+
+                        <small>
+                            6 Evidence | Archived
+                        </small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= REPORT ================= -->
+
+            <section id="reports" class="page hidden">
+
+                <h2>📄 Report Generation</h2>
+
+                <div class="panel">
+
+                    <label>Case ID</label>
+
+                    <input
+                        id="caseId"
+                        value="DW-2026-019"
+                    >
+
+
+                    <label>Investigator Notes</label>
+
+                    <textarea
+                        id="notes"
+                        rows="6"
+                        placeholder="Enter investigator notes..."
+                    ></textarea>
+
+
+                    <button onclick="generateReport()">
+                        📄 Generate Report
+                    </button>
+
+
+                    <div id="reportResult"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= AI ASSISTANT ================= -->
+
+            <section id="assistant" class="page hidden">
+
+                <h2>🤖 AI Assistant</h2>
+
+                <div class="chat-box">
+
+                    <div id="chatMessages">
+
+                        <div class="bot-message">
+                            Hello Investigator 👋
+                            <br><br>
+                            I can help with evidence
+                            organization, risk levels and
+                            case summaries.
+                        </div>
+
+                    </div>
+
+
+                    <div class="chat-input">
+
+                        <input
+                            id="chatInput"
+                            placeholder="Ask AI Assistant..."
+                        >
+
+                        <button onclick="sendMessage()">
+                            Send
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
